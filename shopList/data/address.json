@@ -7,31 +7,31 @@
       "userName":"JackBean",
       "streetName":"北京市朝阳区朝阳公园",
       "postCode":"100001",
-      "tel":"12345678901",
+      "tel":"13616378999",
       "isDefault":true
     },
     {
       "addressId":"100002",
-      "userName":"JackBean",
+      "userName":"Tom",
       "streetName":"北京市朝阳区朝阳公园",
       "postCode":"100001",
-      "tel":"12345678901",
+      "tel":"13234678987",
       "isDefault":false
     },
     {
       "addressId":"100003",
       "userName":"JackBean",
-      "streetName":"北京市朝阳区朝阳公园",
+      "streetName":"山东省济南市历城区",
       "postCode":"100001",
-      "tel":"12345678901",
+      "tel":"18362536789",
       "isDefault":false
     },
     {
       "addressId":"100004",
-      "userName":"JackBean",
-      "streetName":"北京市朝阳区朝阳公园",
+      "userName":"Vertical",
+      "streetName":"上海市徐汇区万荣路",
       "postCode":"100001",
-      "tel":"12345678901",
+      "tel":"15098777876",
       "isDefault":false
     },
     {
@@ -39,7 +39,7 @@
       "userName":"JackBean",
       "streetName":"北京市朝阳区朝阳公园",
       "postCode":"100001",
-      "tel":"12345678901",
+      "tel":"13616308971",
       "isDefault":false
     }
   ]

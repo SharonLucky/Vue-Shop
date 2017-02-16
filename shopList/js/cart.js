@@ -19,7 +19,7 @@ window.vm=new Vue({
   },
   methods:{
     cartView:function () {
-      this.$http.get('data/cartData.json').then(response=>{
+      this.$http.get('data/cartData.json').then(function(response){
         var res =response.data;
         if(res&&res.status=='1'){
           this.productList = res.result.list;
@@ -45,7 +45,7 @@ window.vm=new Vue({
       this.isCheckAll();
     },
     calcTotalMoney:function () {
-      let totalMoney = 0;
+      var totalMoney = 0;
       this.productList.forEach(function (item) {
         if(item.checked){
           totalMoney+=item.productPrice*item.productQuentity;
@@ -54,7 +54,7 @@ window.vm=new Vue({
       this.totalMoney = totalMoney;
     },
     isCheckAll: function () {
-      let flag=true ;
+      var flag=true ;
       this.productList.forEach(function (val) {
         if(!val.checked){flag=false}
       })
