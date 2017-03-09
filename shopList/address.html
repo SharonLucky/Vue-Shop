@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="utf-8">
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -149,25 +148,29 @@
                 </div>
                 <div class="md-content">
                     <div class="confirm-tips">
-                        <p>
-                            <span>收件人姓名：</span>
-                            <input type="text" v-model="name"></p>
-                        <p>
-                            <span>联系电话:</span>
-                            <input type="text" v-model="tel">
+                        <p class="colWrap">
+                            <span class="left-info">收件人姓名:</span>
+                            <input type="text" v-model="name">
+                            <span class="require" v-show="nameFlag">* 必填</span>
                         </p>
-                        <p>
-                            <span>收货地址：</span>
+                        <p class="colWrap">
+                            <span class="left-info">联系电话:</span>
+                            <input type="text" v-model="tel">
+                            <span class="require" v-show="telFlag">* 必填</span>
+                        </p>
+                        <p class="colWrap">
+                            <span class="left-info">收货地址:</span>
                             <select v-model="selected">
                                 <option v-for="pro in province" :value="pro.text">{{pro.text}}</option>
                             </select>
-                            <select>
+                            <select v-model="selCity">
                                 <option v-for="city in selection" :value="city.text">{{city.text}}</option>
                             </select>
+                            <span class="require"  v-show="addrFlag">* 必填</span>
                         </p>
                     </div>
                     <div class="btn-wrap col-2">
-                        <button class="btn btn--m"  @click="delConfirm">Yes</button>
+                        <button class="btn btn--m"  @click="saveConfirm">Yes</button>
                         <button class="btn btn--m btn--red"  @click="showNewAddress=false;">No</button>
                     </div>
                 </div>

@@ -33,6 +33,21 @@
 .md-modal .confirm-tips {
     min-height: 5.65em;
 }
+.md-modal .confirm-tips .colWrap{
+    text-align: left;
+    margin:20px 0 20px 20px;
+}
+.md-modal .confirm-tips .colWrap select{
+    width: 100px;
+    height: 25px;
+    margin: 10px 0;
+}
+.md-modal .confirm-tips .colWrap .left-info{
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    text-align: right;
+}
 .md-modal .confirm-tips, .md-modal .alert-tips {
     font-size: 14px;
     font-weight: 200;
@@ -166,4 +181,8 @@ button {
     line-height: inherit;
     overflow: visible;
     vertical-align: inherit;
+}
+.require{
+    color: red;
+    padding-left: 3px;
 }

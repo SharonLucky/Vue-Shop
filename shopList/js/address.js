@@ -11,7 +11,11 @@ var vm = new Vue({
     province: [],
     name:'',
     tel:'',
-    selected:''
+    selected:'',
+    selCity:'',
+    addrFlag:false,
+    telFlag:false,
+    nameFlag:false
   },
   mounted: function () {
     this.$nextTick(function () {
@@ -63,7 +67,33 @@ var vm = new Vue({
       var _this=this;
       this.showModal=true;
       this.delIndex=index;
+      console.log(index)
 
+    },
+    saveConfirm:function () {
+      var _this=this;
+      if(!_this.name){
+        _this.nameFlag=true;
+        return
+      }
+      if(!_this.tel){
+        _this.telFlag=true;
+        return
+      }
+      if(!_this.selected||!_this.selCity){
+        _this.addrFlag=true;
+        return
+      }
+
+      _this.addressList.push({
+        "addressId":Number(_this.addressList[_this.addressList.length-1].addressId)+1,
+        "userName":_this.name,
+        "streetName":_this.selected+"省"+_this.selCity+"市",
+        "postCode":"100001",
+        "tel":_this.tel,
+        "isDefault":false
+      })
+      this.showNewAddress=false;
     },
     delConfirm:function () {
       var _this=this;
@@ -71,6 +101,7 @@ var vm = new Vue({
       setTimeout(function () {
         _this.addressList.splice(this.delIndex,1)
       },300)
+      console.log( _this.addressList)
     },
     getAddressInfo:function () {
       this.$http.get('data/province.json').then(function (response) {
